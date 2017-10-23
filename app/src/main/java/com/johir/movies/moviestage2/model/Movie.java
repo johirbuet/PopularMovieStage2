@@ -46,7 +46,7 @@ public class Movie implements Parcelable {
     }
 
     public String getmPosterPath() {
-        return CONSTANTS.POSTER_PATH+mPosterPath;
+        return mPosterPath;
     }
 
     public String getmOverView() {

@@ -17,7 +17,7 @@ public class TrailerViewHolder extends RecyclerView.ViewHolder {
     public Trailer trailer;
     public TrailerViewHolder(View itemView) {
         super(itemView);
-        iv_preview = itemView.findViewById(R.id.trailer_thumbnail);
+        iv_preview = (ImageView) itemView.findViewById(R.id.trailer_thumbnail);
         mView = itemView;
     }
 

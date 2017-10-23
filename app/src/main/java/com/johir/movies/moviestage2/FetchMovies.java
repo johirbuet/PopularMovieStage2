@@ -58,8 +58,10 @@ public class FetchMovies extends AsyncTask<Void,Void,List<Movie>> {
         Retrofit rf = new Retrofit.Builder().baseUrl("http://api.themoviedb.org/3/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
+        Log.d("RF",rf.baseUrl().toString());
         RetrofitService rs = rf.create(RetrofitService.class);
         Call<Movies> call = rs.getMovies(sortBy,CONSTANTS.API_KEY);
+        Log.d("CALL",call.request().toString());
 
         try {
 
@@ -68,7 +70,7 @@ public class FetchMovies extends AsyncTask<Void,Void,List<Movie>> {
             Movies movies = res.body();
             return movies.getMovies();
         } catch (IOException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
             Log.e("ERRROR FetchMovies",e.getMessage());
         }
 

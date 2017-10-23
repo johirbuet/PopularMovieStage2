@@ -16,8 +16,8 @@ public class ReviewViewHolder extends RecyclerView.ViewHolder {
     TextView tvAuthor;
     public ReviewViewHolder(View itemView) {
         super(itemView);
-        tvAuthor = itemView.findViewById(R.id.review_author);
-        tv_review = itemView.findViewById(R.id.review_content);
+        tvAuthor = (TextView) itemView.findViewById(R.id.review_author);
+        tv_review = (TextView) itemView.findViewById(R.id.review_content);
         mView = itemView;
 
     }

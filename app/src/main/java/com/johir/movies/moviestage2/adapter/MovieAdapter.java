@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.johir.movies.moviestage2.R;
 import com.johir.movies.moviestage2.data.MoviesContract;
+import com.johir.movies.moviestage2.model.CONSTANTS;
 import com.johir.movies.moviestage2.model.Movie;
 import com.squareup.picasso.Picasso;
 
@@ -53,6 +54,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieViewHolder>{
                 long id = data.getLong(MoviesContract.Entry.COL_MOVIE_ID);
                 String title = data.getString(MoviesContract.Entry.COL_MOVIE_TITLE);
                 String posterPath = data.getString(MoviesContract.Entry.COL_MOVIE_POSTER_PATH);
+
                 String overview = data.getString(MoviesContract.Entry.COL_MOVIE_OVERVIEW);
                 String rating = data.getString(MoviesContract.Entry.COL_MOVIE_VOTE_AVERAGE);
                 String releaseDate = data.getString(MoviesContract.Entry.COL_MOVIE_RELEASE_DATE);
@@ -70,8 +72,10 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieViewHolder>{
         final Context context = holder.mIv.getContext();
         Log.d("Title",movie.getmTitle());
         holder.mTv.setText(movie.getmTitle());
+        Log.d("Poster Path: ",movie.getmPosterPath());
+
         Picasso.with(context)
-                .load(movie.getmPosterPath())
+                .load(CONSTANTS.POSTER_PATH+movie.getmPosterPath())
                 .config(Bitmap.Config.RGB_565)
                 .into(holder.mIv);
         holder.mview.setOnClickListener(new View.OnClickListener(){

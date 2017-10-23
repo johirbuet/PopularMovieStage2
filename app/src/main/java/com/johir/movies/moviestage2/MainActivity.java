@@ -98,6 +98,7 @@ public class MainActivity extends AppCompatActivity implements MovieAdapter.Call
         else {
 
             new FetchMovies(sort,movieAdapter,mRecyclerview,this).execute();
+            pb.setVisibility(View.GONE);
 
         }
     }
